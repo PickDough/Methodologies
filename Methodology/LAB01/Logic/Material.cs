@@ -2,11 +2,11 @@
 {
     public class Material : IMaterial
     {
-        public string Type { get; }
-        public string Units { get; }
-        public float UnitsPerArea { get; }
+        public string Type { get; set; }
+        public string Units { get; set; }
+        public float UnitsPerArea { get; set; }
         
-        public float PricePerUnit { get;  }
+        public float PricePerUnit { get; set; }
         
         public Material(string type, string units, float unitsPerArea, float pricePerUnit)
         {
@@ -28,7 +28,7 @@
 
         public override string ToString()
         {
-            return "";
+            return $"{Type}";
         }
     }
 }

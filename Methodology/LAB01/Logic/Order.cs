@@ -6,16 +6,22 @@ namespace Methodology.LAB01
 {
     public class Order
     {
-        public string Id { get; }
+        public int count { get; set; }
+
+        public Order()
+        {
+            count = 0;
+            OrderItems = new Dictionary<IProduct, int>();
+        }
         
         public Dictionary<IProduct, int> OrderItems { get; }
 
         public string OrderInfo => string.Join('\n', OrderItems
-            .Select(t => t.Key.Info)
+            .Select(t => $"{t.Key.Info} for {t.Value} item(s).")
             .ToList());
 
         public string OrderDescription => string.Join('\n', OrderItems
-            .Select(t => t.Key.Description)
+            .Select(t => $"{t.Key.Info} \n"+t.Key.Description)
             .ToList());
 
         public Dictionary<IMaterial, float> TotalMaterials
