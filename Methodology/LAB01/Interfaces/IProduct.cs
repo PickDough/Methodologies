@@ -6,7 +6,8 @@ namespace Methodology.LAB01
     public interface IProduct
     {
         public float Price { get; }
-        public string Info { get; }
+        public string Info();
+        public string Info(int amount);
         public string Description { get; }
         public List<IMaterial> Materials { get; }
 

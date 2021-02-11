@@ -13,13 +13,13 @@ namespace Methodology.LAB01.DAO
 
         public void InitializeMaterials()
         {
-            Material gold = new Material("Gold", "kg", 0.2f, 1000);
-            Material silver = new Material("Silver", "kg", 0.2f, 600);
-            Material wood1 = new Material("Dark Oak", "kg", 0.5f, 100);
-            Material wood2 = new Material("Indian Cork", "kg", 0.6f, 150);
-            Material glass = new Material("Layered Glass", "m^2", 1, 350);
-            Material paint = new Material("Paint", "ml", 600, 0.5f);
-            Material larnish = new Material("Larnish", "ml", 400, 0.65f);
+            Material gold = new Material("Gold", "kg", 0.0002f, 1000);
+            Material silver = new Material("Silver", "kg", 0.0002f, 600);
+            Material wood1 = new Material("Dark Oak", "kg", 0.0005f, 100);
+            Material wood2 = new Material("Indian Cork", "kg", 0.0006f, 150);
+            Material glass = new Material("Layered Glass", "m^2", 0.001f, 350);
+            Material paint = new Material("Paint", "ml", 0.6f, 0.5f);
+            Material larnish = new Material("Larnish", "ml", 0.4f, 0.65f);
             Materials.Add(gold);
             Materials.Add(silver);
             Materials.Add(wood1);

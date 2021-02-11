@@ -31,7 +31,7 @@ namespace Methodology.LAB01.CLI
                 if (Int32.TryParse(input, out number))
                     if (number<=end && number>=start)
                         return number;
-                Console.WriteLine("Input correct number.");
+                Console.WriteLine($"Input correct number between {start} and {end}");
             }
         }
 
@@ -72,7 +72,11 @@ namespace Methodology.LAB01.CLI
 
         public void DisplayItemsInfo()
         {
-            Console.WriteLine(Order.OrderInfo());
+            Console.WriteLine(Order.OrderInfo(false));
+            Console.WriteLine("Do you wish to view Price for single frame? (1) Yes | (2) No");
+            int input = ReadNumber(1, 2);
+            if (input == 1)
+                Console.WriteLine(Order.OrderInfo(true));
         }
 
         public void DisplayItemsDescription()
@@ -141,6 +145,7 @@ namespace Methodology.LAB01.CLI
             CommandLineInterface cli = new CommandLineInterface(order, warehouse);
             while (true)
             {
+                Console.Clear();
                 cli.LoadMenu();
             }
         }

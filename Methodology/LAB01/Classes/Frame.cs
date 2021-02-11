@@ -28,7 +28,8 @@ namespace Methodology.LAB01
         public float Area => Height * Width - (Height - 2 * dHeight) * (Width - 2 * dWidth);
 
         public float Price => Materials.Sum(m => m.CalculatePrice(Area));
-        public string Info => $"Frame \"{Name}\" {Width}x{Height}(cm) {Price}$";
+        public string Info() => $"Frame \"{Name}\" {Width}x{Height}(cm) {Price}$";
+        public string Info(int amount) => $"Frame \"{Name}\" {Width}x{Height}(cm) {amount*Price}$";
 
         public string Description => string.Join("\n", MaterialsAmount()
             .Select(t => $"{t.Item1}: {t.Item2}{t.Item1.Units}")

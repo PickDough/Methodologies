@@ -16,12 +16,19 @@ namespace Methodology.LAB01
         
         public Dictionary<IProduct, int> OrderItems { get; }
 
-        public string OrderInfo() => string.Join('\n', OrderItems
-            .Select(t => $"{t.Key.Info} for {t.Value} item(s).")
-            .ToList());
+        public string OrderInfo(bool single)
+        {
+            if (single)
+                return string.Join('\n', OrderItems
+                .Select(t => $"{t.Key.Info()} for single item.")
+                .ToList());
+            return string.Join('\n', OrderItems
+                .Select(t => $"{t.Key.Info(t.Value)} for {t.Value} item(s).")
+                .ToList());
+        }
 
         public string OrderDescription() => string.Join('\n', OrderItems
-            .Select(t => $"{t.Key.Info} \n"+t.Key.Description)
+            .Select(t => $"{t.Key.Info()} \n"+t.Key.Description)
             .ToList());
 
         public Dictionary<IMaterial, float> TotalMaterials()
