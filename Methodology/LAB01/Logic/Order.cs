@@ -16,19 +16,17 @@ namespace Methodology.LAB01
         
         public Dictionary<IProduct, int> OrderItems { get; }
 
-        public string OrderInfo => string.Join('\n', OrderItems
+        public string OrderInfo() => string.Join('\n', OrderItems
             .Select(t => $"{t.Key.Info} for {t.Value} item(s).")
             .ToList());
 
-        public string OrderDescription => string.Join('\n', OrderItems
+        public string OrderDescription() => string.Join('\n', OrderItems
             .Select(t => $"{t.Key.Info} \n"+t.Key.Description)
             .ToList());
 
-        public Dictionary<IMaterial, float> TotalMaterials
+        public Dictionary<IMaterial, float> TotalMaterials()
         {
-            get
-            {
-                Dictionary<IMaterial, float> result = new Dictionary<IMaterial, float>();
+            Dictionary<IMaterial, float> result = new Dictionary<IMaterial, float>();
                 foreach (Tuple<IMaterial, float> item in OrderItems
                     .SelectMany(d => d.Key.MaterialsAmount(d.Value)))
                 {
@@ -43,9 +41,8 @@ namespace Methodology.LAB01
                 }
 
                 return result;
-            }
         }
 
-        public float TotalPrice => OrderItems.Sum(d => d.Key.Price * d.Value);
+        public float TotalPrice() => OrderItems.Sum(d => d.Key.Price * d.Value);
     }
 }
