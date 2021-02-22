@@ -1,34 +1,23 @@
-﻿namespace Methodology.LAB01
+﻿using System;
+
+namespace Methodology.LAB01
 {
-    public class Material : IMaterial
+    public class Material
     {
-        public string Type { get; }
-        public string Units { get;  }
+        public Guid Id { get; }
+        public MaterialType MaterialType { get; }
+        public MaterialUnits Units { get;  }
         public float UnitsPerArea { get; }
-        
         public float PricePerUnit { get;}
-        
-        public Material(string type, string units, float unitsPerArea, float pricePerUnit)
-        {
-            Type = type;
-            Units = units;
-            UnitsPerArea = unitsPerArea;
-            PricePerUnit = pricePerUnit;
-        }
+    }
 
-        public float CalculateUnits(float area)
-        {
-            return UnitsPerArea * area;
-        }
+    public enum MaterialType
+    {
+        Wood, Glass, Silver, Gold, Paint, Larnish
+    }
 
-        public float CalculatePrice(float area)
-        {
-            return PricePerUnit * UnitsPerArea * area;
-        }
-
-        public override string ToString()
-        {
-            return $"{Type}";
-        }
+    public enum MaterialUnits
+    {
+        gr, ml
     }
 }
