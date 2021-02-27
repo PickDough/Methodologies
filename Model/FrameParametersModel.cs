@@ -7,6 +7,6 @@
         public float DHeight { get; set; }
         public float DWidth { get; set; }
         
-        public float Area => Width * Height - (Width - 2 * DWidth) * (Height * 2 * DHeight);
+        public float Area => Width * Height - (Width - 2 * DWidth) * (Height - 2 * DHeight);
     }
 }

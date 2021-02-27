@@ -76,19 +76,20 @@ namespace Methodology.LAB01.CLI
                 _managerController.AddNewOrder(order);
          }
 
-         public void DisplayMaterialsPrice()
+         public void DisplayMaterialsAmount()
          {
              List<OrderModel> orders = _managerController.CreatedOrders;
              LoadHeader();
-             int i = 1;
+             int i = 0;
              foreach (OrderModel order in orders)
              {
-                 Console.WriteLine($"{i}. #{order.Id.ToString().Substring(0, 5)}");
                  i++;
+                 Console.WriteLine($"{i}. #{order.Id.ToString().Substring(0, 5)}");
              }
-             if (i == 1)
+             if (i == 0)
                  return;
-             RequiredMaterialsModel req = _managerController.CalculateRequiredMaterials(orders[i-1].Id);
+             int input = ReadNumber(1, i);
+             RequiredMaterialsModel req = _managerController.CalculateRequiredMaterials(orders[input-1].Id);
              Console.WriteLine(req.OrderId.ToString().Substring(0, 5));
              Console.WriteLine(string.Join("\n", req.RequiredMaterials
                  .Select(d => $"{d.Key.MaterialType.TypeName} {d.Value}")));
@@ -106,7 +107,7 @@ namespace Methodology.LAB01.CLI
                      OrderItem();
                      break;
                  case 2:
-                     DisplayMaterialsPrice();
+                     DisplayMaterialsAmount();
                      break;
              }
              Console.WriteLine("");

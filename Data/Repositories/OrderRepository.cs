@@ -40,6 +40,7 @@ namespace Data
             return _db.Orders
                 .Include("OrderItems.FrameParameters")
                 .Include("OrderItems.Frame")
+                .Include("OrderItems.Frame.FrameType")
                 .ToList();
         }
 
