@@ -1,0 +1,27 @@
+﻿using Domain;
+using Entities;
+using Model;
+
+namespace Mappers
+{
+    public class MaterialTypeEntityDomainMapper: IMaterialTypeEntityDomainMapper
+    {
+        public MaterialTypeEntity MapToEntity(MaterialType domain)
+        {
+            return new ()
+            {
+                Id = domain.Id,
+                TypeName = domain.TypeName
+            };
+        }
+
+        public MaterialType MapToDomain(MaterialTypeEntity entity)
+        {
+            return new ()
+            {
+                Id = entity.Id,
+                TypeName = entity.TypeName
+            };
+        }
+    }
+}

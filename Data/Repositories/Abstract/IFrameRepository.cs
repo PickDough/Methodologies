@@ -5,13 +5,9 @@ using Entities;
 
 namespace Data.Repositories.Abstract
 {
-    public interface IFrameRepository
+    public interface IFrameRepository: IRepository<FrameEntity, Guid>
     {
-        public void Add(Frame frame);
-        public void Update(Frame frame);
-        public Frame Get(Guid id);
-        public List<Frame> GetAll();
-        public void Delete(Guid id);
+
     }
     
 }

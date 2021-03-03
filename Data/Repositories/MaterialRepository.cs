@@ -15,19 +15,19 @@ namespace Data
         {
             _db = new FrameDataContext();
         }
-        public void Add(Material material)
+        public void Add(MaterialEntity materialEntity)
         {
-            _db.Materials.Add(material);
+            _db.Materials.Add(materialEntity);
             _db.SaveChanges();
         }
 
-        public void Update(Material material)
+        public void Update(MaterialEntity materialEntity)
         {
-            _db.Materials.Update(material);
+            _db.Materials.Update(materialEntity);
             _db.SaveChanges();
         }
 
-        public Material Get(Guid id)
+        public MaterialEntity Get(Guid id)
         {
             return _db.Materials
                 .Include("MaterialType")
@@ -35,7 +35,7 @@ namespace Data
                 .FirstOrDefault(m => m.Id == id);
         }
 
-        public List<Material> GetAll()
+        public IEnumerable<MaterialEntity> GetAll()
         {
             return _db.Materials
                 .Include("MaterialType")
@@ -43,9 +43,9 @@ namespace Data
                 .ToList();
         }
 
-        public List<Material> GetMaterialsInOrderItem(Guid orderItemId)
+        public IEnumerable<MaterialEntity> GetMaterialsInOrderItem(Guid orderItemId)
         {
-            OrderItem orderItem = _db.OrderItems
+            OrderItemEntity orderItemEntity = _db.OrderItems
                 .Include(item => item.Frame)
                     .ThenInclude(frame => frame.Materials)
                     .ThenInclude(material => material.MaterialType)
@@ -53,7 +53,7 @@ namespace Data
                     .ThenInclude(frame => frame.Materials)
                     .ThenInclude(material => material.MaterialUnits)
                 .FirstOrDefault(item => item.Id == orderItemId);
-            return orderItem.Frame.Materials;
+            return orderItemEntity.Frame.Materials;
         }
 
         public void Delete(Guid id)

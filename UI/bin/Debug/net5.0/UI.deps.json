@@ -1005,6 +1005,11 @@
           "Data.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
       "Entities/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.0-preview.1.21102.2",
@@ -1018,6 +1023,7 @@
       },
       "Mappers/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0-preview.1.21102.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0-preview.1.21102.2",
@@ -1726,6 +1732,11 @@
       "sha512": ""
     },
     "Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

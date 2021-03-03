@@ -15,26 +15,26 @@ namespace Data
         {
             _db = new FrameDataContext();
         }
-        public void Add(Frame frame)
+        public void Add(FrameEntity frameEntity)
         {
-            _db.Frames.Add(frame);
+            _db.Frames.Add(frameEntity);
             _db.SaveChanges();
         }
 
-        public void Update(Frame frame)
+        public void Update(FrameEntity frameEntity)
         {
-            _db.Frames.Update(frame);
+            _db.Frames.Update(frameEntity);
             _db.SaveChanges();
         }
 
-        public Frame Get(Guid id)
+        public FrameEntity Get(Guid id)
         {
             return _db.Frames
                 .Include("FrameType")
                 .FirstOrDefault(f => f.Id == id);
         }
 
-        public List<Frame> GetAll()
+        public IEnumerable<FrameEntity> GetAll()
         {
             return _db.Frames
                 .Include("FrameType")

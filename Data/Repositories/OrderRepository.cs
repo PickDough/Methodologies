@@ -15,19 +15,19 @@ namespace Data
         {
             _db = new FrameDataContext();
         }
-        public void Add(Order order)
+        public void Add(OrderEntity orderEntity)
         {
-            _db.Orders.Add(order);
+            _db.Orders.Add(orderEntity);
             _db.SaveChanges();
         }
 
-        public void Update(Order order)
+        public void Update(OrderEntity orderEntity)
         {
-            _db.Orders.Update(order);
+            _db.Orders.Update(orderEntity);
             _db.SaveChanges();
         }
 
-        public Order Get(Guid id)
+        public OrderEntity Get(Guid id)
         {
             return _db.Orders
                 .Include("OrderItems.FrameParameters")
@@ -35,7 +35,7 @@ namespace Data
                 .FirstOrDefault(o => o.Id == id);
         }
 
-        public List<Order> GetAll()
+        public IEnumerable<OrderEntity> GetAll()
         {
             return _db.Orders
                 .Include("OrderItems.FrameParameters")

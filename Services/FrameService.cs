@@ -4,6 +4,7 @@ using Data;
 using Data.Repositories.Abstract;
 using Entities;
 using Mappers;
+using Mappers.DomainToModel;
 using Model;
 using Services.Abstract;
 
@@ -12,18 +13,23 @@ namespace Services
     public class FrameService: IFrameService
     {
         private readonly IFrameRepository _frameRepository;
-        private readonly IFrameMapper _mapper;
+        private readonly IFrameEntityDomainMapper _entityDomainMapper;
+        private readonly IFrameDomainModelMapper _domainModelMapper;
 
         public FrameService()
         {
             _frameRepository = new FrameRepository();
-            _mapper = new FrameMapper();
+            _entityDomainMapper = new FrameEntityDomainMapper();
+            _domainModelMapper = new FrameDomainModelMapper();
         }
 
         public List<FrameModel> GetAllFrames()
         {
-            List<Frame> frames = _frameRepository.GetAll();
-            return _frameRepository.GetAll().Select(_mapper.MapToModel).ToList();
+            return _frameRepository
+                .GetAll()
+                .Select(_entityDomainMapper.MapToDomain)
+                .Select(_domainModelMapper.MapToModel)
+                .ToList();
         }
     }
 }

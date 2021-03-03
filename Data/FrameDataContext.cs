@@ -17,14 +17,14 @@ namespace Data
         {
         }
 
-        public DbSet<Frame> Frames { get; set; }
-        public DbSet<Material> Materials { get; set; }
-        public DbSet<FrameType> FrameTypes { get; set; }
-        public DbSet<MaterialType> MaterialsTypes { get; set; }
-        public DbSet<MaterialUnit> MaterialUnits { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<FrameParameters> FrameParameters { get; set; }
+        public DbSet<FrameEntity> Frames { get; set; }
+        public DbSet<MaterialEntity> Materials { get; set; }
+        public DbSet<FrameTypeEntity> FrameTypes { get; set; }
+        public DbSet<MaterialTypeEntity> MaterialsTypes { get; set; }
+        public DbSet<MaterialUnitEntity> MaterialUnits { get; set; }
+        public DbSet<OrderEntity> Orders { get; set; }
+        public DbSet<OrderItemEntity> OrderItems { get; set; }
+        public DbSet<FrameParametersEntity> FrameParameters { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

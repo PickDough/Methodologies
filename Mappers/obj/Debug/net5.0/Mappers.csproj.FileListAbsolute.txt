@@ -18,3 +18,5 @@ C:\Users\koler\RiderProjects\Methodology\Mappers\obj\Debug\net5.0\Mappers.dll
 C:\Users\koler\RiderProjects\Methodology\Mappers\obj\Debug\net5.0\ref\Mappers.dll
 C:\Users\koler\RiderProjects\Methodology\Mappers\obj\Debug\net5.0\Mappers.pdb
 C:\Users\koler\RiderProjects\Methodology\Mappers\obj\Debug\net5.0\Mappers.genruntimeconfig.cache
+C:\Users\koler\RiderProjects\Methodology\Mappers\bin\Debug\net5.0\Domain.dll
+C:\Users\koler\RiderProjects\Methodology\Mappers\bin\Debug\net5.0\Domain.pdb

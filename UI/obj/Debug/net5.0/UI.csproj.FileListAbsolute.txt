@@ -77,3 +77,6 @@ C:\Users\koler\RiderProjects\Methodology\UI\obj\Debug\net5.0\UI.dll
 C:\Users\koler\RiderProjects\Methodology\UI\obj\Debug\net5.0\ref\UI.dll
 C:\Users\koler\RiderProjects\Methodology\UI\obj\Debug\net5.0\UI.pdb
 C:\Users\koler\RiderProjects\Methodology\UI\obj\Debug\net5.0\UI.genruntimeconfig.cache
+C:\Users\koler\RiderProjects\Methodology\UI\bin\Debug\net5.0\UI.dll.config
+C:\Users\koler\RiderProjects\Methodology\UI\bin\Debug\net5.0\Domain.dll
+C:\Users\koler\RiderProjects\Methodology\UI\bin\Debug\net5.0\Domain.pdb

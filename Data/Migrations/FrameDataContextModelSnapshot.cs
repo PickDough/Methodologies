@@ -20,7 +20,7 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "6.0.0-preview.1.21102.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Entities.Frame", b =>
+            modelBuilder.Entity("Entities.FrameEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace Data.Migrations
                     b.ToTable("Frames");
                 });
 
-            modelBuilder.Entity("Entities.FrameParameters", b =>
+            modelBuilder.Entity("Entities.FrameParametersEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -68,7 +68,7 @@ namespace Data.Migrations
                     b.ToTable("FrameParameters");
                 });
 
-            modelBuilder.Entity("Entities.FrameType", b =>
+            modelBuilder.Entity("Entities.FrameTypeEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace Data.Migrations
                     b.ToTable("FrameTypes");
                 });
 
-            modelBuilder.Entity("Entities.Material", b =>
+            modelBuilder.Entity("Entities.MaterialEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,7 +109,7 @@ namespace Data.Migrations
                     b.ToTable("Materials");
                 });
 
-            modelBuilder.Entity("Entities.MaterialType", b =>
+            modelBuilder.Entity("Entities.MaterialTypeEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -123,7 +123,7 @@ namespace Data.Migrations
                     b.ToTable("MaterialsTypes");
                 });
 
-            modelBuilder.Entity("Entities.MaterialUnit", b =>
+            modelBuilder.Entity("Entities.MaterialUnitEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -137,7 +137,7 @@ namespace Data.Migrations
                     b.ToTable("MaterialUnits");
                 });
 
-            modelBuilder.Entity("Entities.Order", b =>
+            modelBuilder.Entity("Entities.OrderEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -148,7 +148,7 @@ namespace Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Entities.OrderItem", b =>
+            modelBuilder.Entity("Entities.OrderItemEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -160,7 +160,7 @@ namespace Data.Migrations
                     b.Property<Guid>("FrameParametersId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("OrderId")
+                    b.Property<Guid?>("OrderEntityId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
@@ -172,12 +172,12 @@ namespace Data.Migrations
 
                     b.HasIndex("FrameParametersId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("OrderEntityId");
 
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("FrameMaterial", b =>
+            modelBuilder.Entity("FrameEntityMaterialEntity", b =>
                 {
                     b.Property<Guid>("FramesId")
                         .HasColumnType("uniqueidentifier");
@@ -189,12 +189,12 @@ namespace Data.Migrations
 
                     b.HasIndex("MaterialsId");
 
-                    b.ToTable("FrameMaterial");
+                    b.ToTable("FrameEntityMaterialEntity");
                 });
 
-            modelBuilder.Entity("Entities.Frame", b =>
+            modelBuilder.Entity("Entities.FrameEntity", b =>
                 {
-                    b.HasOne("Entities.FrameType", "FrameType")
+                    b.HasOne("Entities.FrameTypeEntity", "FrameType")
                         .WithMany()
                         .HasForeignKey("FrameTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -203,15 +203,15 @@ namespace Data.Migrations
                     b.Navigation("FrameType");
                 });
 
-            modelBuilder.Entity("Entities.Material", b =>
+            modelBuilder.Entity("Entities.MaterialEntity", b =>
                 {
-                    b.HasOne("Entities.MaterialType", "MaterialType")
+                    b.HasOne("Entities.MaterialTypeEntity", "MaterialType")
                         .WithMany()
                         .HasForeignKey("MaterialTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.MaterialUnit", "MaterialUnits")
+                    b.HasOne("Entities.MaterialUnitEntity", "MaterialUnits")
                         .WithMany()
                         .HasForeignKey("MaterialUnitsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -222,45 +222,45 @@ namespace Data.Migrations
                     b.Navigation("MaterialUnits");
                 });
 
-            modelBuilder.Entity("Entities.OrderItem", b =>
+            modelBuilder.Entity("Entities.OrderItemEntity", b =>
                 {
-                    b.HasOne("Entities.Frame", "Frame")
+                    b.HasOne("Entities.FrameEntity", "Frame")
                         .WithMany()
                         .HasForeignKey("FrameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.FrameParameters", "FrameParameters")
+                    b.HasOne("Entities.FrameParametersEntity", "FrameParameters")
                         .WithMany()
                         .HasForeignKey("FrameParametersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Order", null)
+                    b.HasOne("Entities.OrderEntity", null)
                         .WithMany("OrderItems")
-                        .HasForeignKey("OrderId");
+                        .HasForeignKey("OrderEntityId");
 
                     b.Navigation("Frame");
 
                     b.Navigation("FrameParameters");
                 });
 
-            modelBuilder.Entity("FrameMaterial", b =>
+            modelBuilder.Entity("FrameEntityMaterialEntity", b =>
                 {
-                    b.HasOne("Entities.Frame", null)
+                    b.HasOne("Entities.FrameEntity", null)
                         .WithMany()
                         .HasForeignKey("FramesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entities.Material", null)
+                    b.HasOne("Entities.MaterialEntity", null)
                         .WithMany()
                         .HasForeignKey("MaterialsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Entities.Order", b =>
+            modelBuilder.Entity("Entities.OrderEntity", b =>
                 {
                     b.Navigation("OrderItems");
                 });

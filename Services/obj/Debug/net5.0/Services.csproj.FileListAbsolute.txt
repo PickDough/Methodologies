@@ -22,3 +22,5 @@ C:\Users\koler\RiderProjects\Methodology\Services\obj\Debug\net5.0\Services.dll
 C:\Users\koler\RiderProjects\Methodology\Services\obj\Debug\net5.0\ref\Services.dll
 C:\Users\koler\RiderProjects\Methodology\Services\obj\Debug\net5.0\Services.pdb
 C:\Users\koler\RiderProjects\Methodology\Services\obj\Debug\net5.0\Services.genruntimeconfig.cache
+C:\Users\koler\RiderProjects\Methodology\Services\bin\Debug\net5.0\Domain.dll
+C:\Users\koler\RiderProjects\Methodology\Services\bin\Debug\net5.0\Domain.pdb

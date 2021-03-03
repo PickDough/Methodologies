@@ -4,13 +4,9 @@ using Entities;
 
 namespace Data.Repositories.Abstract
 {
-    public interface IMaterialRepository
+    public interface IMaterialRepository: IRepository<MaterialEntity, Guid>
     {
-        public void Add(Material material);
-        public void Update(Material material);
-        public Material Get(Guid id);
-        public List<Material> GetAll();
-        public List<Material> GetMaterialsInOrderItem(Guid orderItemId);
-        public void Delete(Guid id);
+        public IEnumerable<MaterialEntity> GetMaterialsInOrderItem(Guid orderItemId);
+
     }
 }
