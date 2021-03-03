@@ -1,4 +1,3 @@
-C:\Users\koler\RiderProjects\Methodology\Methodology\bin\Debug\net5.0\Methodology.exe
 C:\Users\koler\RiderProjects\Methodology\Methodology\bin\Debug\net5.0\Methodology.deps.json
 C:\Users\koler\RiderProjects\Methodology\Methodology\bin\Debug\net5.0\Methodology.runtimeconfig.json
 C:\Users\koler\RiderProjects\Methodology\Methodology\bin\Debug\net5.0\Methodology.runtimeconfig.dev.json

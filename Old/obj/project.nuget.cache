@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TYaEfIKYCi0z7IgWh1tH2miHm5XIlOhMHJGsV63ALCSTWz65koFGp+xqoruQx5rckwixSS1bCbZYM/DDGsvDfw==",
+  "dgSpecHash": "kSma3hZd/4oQmBIb+g7mdj+Y0Pr9qzj+ShIp+Ahnv0yP2NTyjquQRwluFC92Fr8eWNw+YyG3Jn+d/6t5Yf0ECA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Methodology\\Methodology.csproj",
+  "projectFilePath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Old\\Old.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\koler\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\koler\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

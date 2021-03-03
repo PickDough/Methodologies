@@ -5726,11 +5726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\koler\\RiderProjects\\Methodology\\Methodology\\Methodology.csproj",
-      "projectName": "Methodology",
-      "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Methodology\\Methodology.csproj",
+      "projectUniqueName": "C:\\Users\\koler\\RiderProjects\\Methodology\\Old\\Old.csproj",
+      "projectName": "Old",
+      "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Old\\Old.csproj",
       "packagesPath": "C:\\Users\\koler\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Methodology\\obj\\",
+      "outputPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Old\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\koler\\AppData\\Roaming\\NuGet\\NuGet.Config",
