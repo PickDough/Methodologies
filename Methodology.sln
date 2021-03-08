@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{9CD9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A83B36E7-7AFC-4720-ABAC-04B853474701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIWpf", "UIWpf\UIWpf.csproj", "{0C96E49C-F990-486C-85F8-3C20E5D55DF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{A83B36E7-7AFC-4720-ABAC-04B853474701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83B36E7-7AFC-4720-ABAC-04B853474701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83B36E7-7AFC-4720-ABAC-04B853474701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C96E49C-F990-486C-85F8-3C20E5D55DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C96E49C-F990-486C-85F8-3C20E5D55DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C96E49C-F990-486C-85F8-3C20E5D55DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C96E49C-F990-486C-85F8-3C20E5D55DF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
