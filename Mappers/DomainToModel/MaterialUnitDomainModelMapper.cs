@@ -3,9 +3,9 @@ using Model;
 
 namespace Mappers
 {
-    public class MaterialUnitDomainModelMapper: IMaterialUnitDomainModelnMapper
+    public class MaterialUnitDomainModelMapper
     {
-        public MaterialUnit MapToDomain(MaterialUnitModel model)
+        public static MaterialUnit MapToDomain(MaterialUnitModel model)
         {
             return new ()
             {
@@ -14,7 +14,7 @@ namespace Mappers
             };
         }
 
-        public MaterialUnitModel MapToModel(MaterialUnit domain)
+        public static MaterialUnitModel MapToModel(MaterialUnit domain)
         {
             return new ()
             {

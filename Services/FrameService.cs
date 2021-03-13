@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Data;
-using Data.Repositories.Abstract;
-using Entities;
+using Data.UnitOfWork.Abstract;
 using Mappers;
 using Mappers.DomainToModel;
 using Model;
@@ -12,23 +10,19 @@ namespace Services
 {
     public class FrameService: IFrameService
     {
-        private readonly IFrameRepository _frameRepository;
-        private readonly IFrameEntityDomainMapper _entityDomainMapper;
-        private readonly IFrameDomainModelMapper _domainModelMapper;
+        private readonly IUnitOfWork _uof;
 
-        public FrameService()
+        public FrameService(IUnitOfWork uof)
         {
-            _frameRepository = new FrameRepository();
-            _entityDomainMapper = new FrameEntityDomainMapper();
-            _domainModelMapper = new FrameDomainModelMapper();
+            _uof = uof;
         }
 
         public List<FrameModel> GetAllFrames()
         {
-            return _frameRepository
-                .GetAll()
-                .Select(_entityDomainMapper.MapToDomain)
-                .Select(_domainModelMapper.MapToModel)
+            return _uof.FrameRepository
+                .GetAllComplex()
+                .Select(FrameEntityDomainMapper.MapToDomain)
+                .Select(FrameDomainModelMapper.MapToModel)
                 .ToList();
         }
     }

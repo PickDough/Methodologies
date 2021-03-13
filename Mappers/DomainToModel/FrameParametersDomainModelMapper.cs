@@ -3,9 +3,9 @@ using Model;
 
 namespace Mappers.DomainToModel
 {
-    public class FrameParametersDomainModelMapper: IFrameParametersDomainModelMapper
+    public class FrameParametersDomainModelMapper
     {
-        public FrameParameters MapToDomain(FrameParametersModel model)
+        public static FrameParameters MapToDomain(FrameParametersModel model)
         {
             return new ()
             {
@@ -17,7 +17,7 @@ namespace Mappers.DomainToModel
             };
         }
 
-        public FrameParametersModel MapToModel(FrameParameters domain)
+        public static FrameParametersModel MapToModel(FrameParameters domain)
         {
             return new ()
             {

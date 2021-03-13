@@ -4,32 +4,31 @@ using Model;
 
 namespace Mappers.DomainToModel
 {
-    public class OrderDomainModelMapper: IOrderDomainModelMapper
+    public class OrderDomainModelMapper
     {
-        private readonly IOrderItemDomainModelMapper _orderItemDomainModelMapper;
-
-        public OrderDomainModelMapper()
-        {
-            _orderItemDomainModelMapper = new OrderItemDomainModelMapper();
-        }
-
-        public Order MapToDomain(OrderModel model)
+        public static Order MapToDomain(OrderModel model)
         {
             
             return new ()
             {
                 Id = model.Id,
-                OrderItems = model.OrderItems.Select(_orderItemDomainModelMapper.MapToDomain).ToList()
+                OrderItems = model.OrderItems
+                    .Select(OrderItemDomainModelMapper.MapToDomain)
+                    .ToList(),
+                Client = ClientDomainModelMapper.MapToDomain(model.Client)
             };
         }
 
-        public OrderModel MapToModel(Order domain)
+        public static OrderModel MapToModel(Order domain)
         {
             
             return new ()
             {
                 Id = domain.Id,
-                OrderItems = domain.OrderItems.Select(_orderItemDomainModelMapper.MapToModel).ToList()
+                OrderItems = domain.OrderItems
+                    .Select(OrderItemDomainModelMapper.MapToModel)
+                    .ToList(),
+                Client = ClientDomainModelMapper.MapToModel(domain.Client)
             };
         }
     }

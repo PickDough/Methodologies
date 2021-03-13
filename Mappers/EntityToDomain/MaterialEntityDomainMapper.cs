@@ -4,37 +4,29 @@ using Model;
 
 namespace Mappers
 {
-    public class MaterialEntityDomainMapper: IMaterialEntityDomainMapper
+    public class MaterialEntityDomainMapper
     {
-        private readonly IMaterialTypeEntityDomainMapper _materialTypeEntityDomainMapper;
-        private readonly IMaterialUnitEntityDomainMapper _materialUnitEntityDomainMapper;
-        
-        public MaterialEntityDomainMapper()
-        {
-            _materialTypeEntityDomainMapper = new MaterialTypeEntityDomainMapper();
-            _materialUnitEntityDomainMapper = new MaterialUnitEntityDomainMapper();
-        }
-        public MaterialEntity MapToEntity(Material domain)
+        public static MaterialEntity MapToEntity(Material domain)
         {
             return new ()
             {
                 Id = domain.Id,
                 PricePerUnit = domain.PricePerUnit,
                 UnitsPerArea = domain.UnitsPerArea,
-                MaterialType = _materialTypeEntityDomainMapper.MapToEntity(domain.MaterialType),
-                MaterialUnits = _materialUnitEntityDomainMapper.MapToEntity(domain.MaterialUnits)
+                MaterialType = MaterialTypeEntityDomainMapper.MapToEntity(domain.MaterialType),
+                MaterialUnits = MaterialUnitEntityDomainMapper.MapToEntity(domain.MaterialUnits)
             };
         }
 
-        public Material MapToDomain(MaterialEntity entity)
+        public static Material MapToDomain(MaterialEntity entity)
         {
             return new ()
             {
                 Id = entity.Id,
                 PricePerUnit = entity.PricePerUnit,
                 UnitsPerArea = entity.UnitsPerArea,
-                MaterialType = _materialTypeEntityDomainMapper.MapToDomain(entity.MaterialType),
-                MaterialUnits = _materialUnitEntityDomainMapper.MapToDomain(entity.MaterialUnits)
+                MaterialType = MaterialTypeEntityDomainMapper.MapToDomain(entity.MaterialType),
+                MaterialUnits = MaterialUnitEntityDomainMapper.MapToDomain(entity.MaterialUnits)
             };
         }
     }

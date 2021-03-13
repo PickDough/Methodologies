@@ -12,10 +12,10 @@ namespace API
         private readonly IOrderService _orderService;
         private readonly IFrameService _frameService;
 
-        public ManagerController()
+        public ManagerController(IOrderService orderService, IFrameService frameService)
         {
-            _orderService = new OrderService();
-            _frameService = new FrameService();
+            _orderService = orderService;
+            _frameService = frameService;
         }
 
         List<FrameModel> IManagerController.AvailableFrames => _frameService.GetAllFrames();

@@ -5,16 +5,9 @@ using Model;
 
 namespace Mappers
 {
-    public class FrameEntityDomainMapper: IFrameEntityDomainMapper
+    public class FrameEntityDomainMapper
     {
-        private readonly IFrameTypeParameterEntityDomainMapper _frameTypeEntityDomainMapper;
-        
-        public FrameEntityDomainMapper()
-        {
-            _frameTypeEntityDomainMapper = new FrameTypeEntityDomainMapper();
-        }
-        
-        public FrameEntity MapToEntity(Frame domain)
+        public static FrameEntity MapToEntity(Frame domain)
         {
             return new ()
             {
@@ -22,18 +15,18 @@ namespace Mappers
                 Name = domain.Name,
                 Info = domain.Info,
                 Description = domain.Description,
-                FrameType = _frameTypeEntityDomainMapper.MapToEntity(domain.FrameType)
+                FrameType = FrameTypeEntityDomainMapper.MapToEntity(domain.FrameType)
             };
         }
 
-        public Frame MapToDomain(FrameEntity entity)
+        public static Frame MapToDomain(FrameEntity entity)
         {
             return new ()
             {
                 Id = entity.Id,
                 Name = entity.Name,
                 Info = entity.Info,
-                FrameType = _frameTypeEntityDomainMapper.MapToDomain(entity.FrameType)
+                FrameType = FrameTypeEntityDomainMapper.MapToDomain(entity.FrameType)
             };
         }
     }

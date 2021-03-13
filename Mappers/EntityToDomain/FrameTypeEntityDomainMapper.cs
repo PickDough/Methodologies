@@ -4,9 +4,9 @@ using Model;
 
 namespace Mappers
 {
-    public class FrameTypeEntityDomainMapper: IFrameTypeParameterEntityDomainMapper
+    public class FrameTypeEntityDomainMapper
     {
-        public FrameTypeEntity MapToEntity(FrameType domain)
+        public static FrameTypeEntity MapToEntity(FrameType domain)
         {
             return new ()
             {
@@ -15,7 +15,7 @@ namespace Mappers
             };
         }
 
-        public FrameType MapToDomain(FrameTypeEntity entity)
+        public static FrameType MapToDomain(FrameTypeEntity entity)
         {
             return new ()
             {

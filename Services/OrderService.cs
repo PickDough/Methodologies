@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Data;
-using Data.Repositories.Abstract;
+using Data.UnitOfWork.Abstract;
 using Domain;
-using Entities;
 using Mappers;
 using Mappers.DomainToModel;
 using Model;
@@ -14,40 +12,45 @@ namespace Services
 {
     public class OrderService: IOrderService
     {
-        private readonly IOrderRepository _orderRepository;
-        private readonly IOrderEntityDomainMapper _entityDomainMapper;
+        private readonly IUnitOfWork _uof;
         private readonly IMaterialService _materialService;
-        private readonly IOrderDomainModelMapper _domainModelMapper;
 
-        public OrderService()
+        public OrderService(IUnitOfWork uof, IMaterialService materialService)
         {
-            _orderRepository = new OrderRepository();
-            _entityDomainMapper = new OrderEntityDomainMapper();
-            _materialService = new MaterialService();
-            _domainModelMapper = new OrderDomainModelMapper();
+            _uof = uof;
+            _materialService = materialService;
         }
 
         public void AddOrder(OrderModel order)
         {
-            _orderRepository
-                .Add(_entityDomainMapper
-                    .MapToEntity(_domainModelMapper
+            if (!_uof.ClientRepository.Exists(ClientEntityDomainMapper
+                .MapToEntity(ClientDomainModelMapper
+                    .MapToDomain(order.Client))))
+            {
+                _uof.ClientRepository.Add(ClientEntityDomainMapper
+                    .MapToEntity(ClientDomainModelMapper
+                        .MapToDomain(order.Client)));
+            }
+            _uof.OrderRepository
+                .Add(OrderEntityDomainMapper
+                    .MapToEntity(OrderDomainModelMapper
                         .MapToDomain(order)));
+            _uof.Save();
         }
 
         public List<OrderModel> GetAllOrders()
         {
-            return _orderRepository
-                .GetAll()
-                .Select(_entityDomainMapper.MapToDomain)
-                .Select(_domainModelMapper.MapToModel)
+            return _uof.OrderRepository
+                .GetAllComplex()
+                .Select(OrderEntityDomainMapper.MapToDomain)
+                .Select(OrderDomainModelMapper.MapToModel)
                 .ToList();
         }
 
         public RequiredMaterialsModel GetRequiredMaterials(Guid orderId)
         {
-            List <OrderItem> orderItems = _entityDomainMapper
-                .MapToDomain(_orderRepository.Get(orderId))
+            List <OrderItem> orderItems = OrderEntityDomainMapper
+                .MapToDomain(_uof.OrderRepository.GetComplex(orderId))
                 .OrderItems;
             return new RequiredMaterialsModel()
             {

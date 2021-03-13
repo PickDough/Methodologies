@@ -4,35 +4,27 @@ using Model;
 
 namespace Mappers
 {
-    public class OrderItemEntityDomainMapper: IOrderItemEntityDomainMapper
+    public class OrderItemEntityDomainMapper
     {
-        private readonly IFrameParametersEntityDomainMapper _frameParametersEntityDomainMapper;
-        private readonly IFrameEntityDomainMapper _frameEntityDomainMapper;
-
-        public OrderItemEntityDomainMapper()
-        {
-            _frameParametersEntityDomainMapper = new FrameParametersEntityDomainMapper();
-            _frameEntityDomainMapper = new FrameEntityDomainMapper();
-        }
-
-        public OrderItemEntity MapToEntity(OrderItem domain)
+        public static OrderItemEntity MapToEntity(OrderItem domain)
         {
             return new ()
             {
                 Id = domain.Id,
                 FrameId = domain.Frame.Id,
-                FrameParameters = _frameParametersEntityDomainMapper.MapToEntity(domain.FrameParameters),
+                FrameParameters = FrameParametersEntityDomainMapper
+                    .MapToEntity(domain.FrameParameters),
                 Quantity = domain.Quantity
             };
         }
 
-        public OrderItem MapToDomain(OrderItemEntity  entity)
+        public static OrderItem MapToDomain(OrderItemEntity  entity)
         {
             return new ()
             {
                 Id = entity.Id,
-                Frame = _frameEntityDomainMapper.MapToDomain(entity.Frame),
-                FrameParameters = _frameParametersEntityDomainMapper.MapToDomain(entity.FrameParameters),
+                Frame = FrameEntityDomainMapper.MapToDomain(entity.Frame),
+                FrameParameters = FrameParametersEntityDomainMapper.MapToDomain(entity.FrameParameters),
                 Quantity = entity.Quantity
             };
         }

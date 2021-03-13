@@ -3,34 +3,27 @@ using Model;
 
 namespace Mappers.DomainToModel
 {
-    public class FrameDomainModelMapper: IFrameDomainModelMapper
+    public class FrameDomainModelMapper
     {
-        private readonly IFrameTypeDomainModelMapper _frameTypeDomainModelMapper;
-
-        public FrameDomainModelMapper()
-        {
-            _frameTypeDomainModelMapper = new FrameTypeDomainModelMapper();
-        }
-
-        public Frame MapToDomain(FrameModel model)
+        public static Frame MapToDomain(FrameModel model)
         {
             return new ()
             {
                 Id = model.Id,
                 Name = model.Name,
                 Info = model.Info,
-                FrameType =_frameTypeDomainModelMapper.MapToDomain(model.FrameType)
+                FrameType = FrameTypeDomainModelMapper.MapToDomain(model.FrameType)
             };
         }
 
-        public FrameModel MapToModel(Frame domain)
+        public static FrameModel MapToModel(Frame domain)
         {
             return new ()
             {
                 Id = domain.Id,
                 Name = domain.Name,
                 Info = domain.Info,
-                FrameType = _frameTypeDomainModelMapper.MapToModel(domain.FrameType)
+                FrameType = FrameTypeDomainModelMapper.MapToModel(domain.FrameType)
             };
         }
     }

@@ -3,9 +3,9 @@ using Model;
 
 namespace Mappers.DomainToModel
 {
-    public class MaterialTypeDomainModelMapper: IMaterialTypeDomainModelMapper
+    public class MaterialTypeDomainModelMapper
     {
-        public MaterialType MapToDomain(MaterialTypeModel model)
+        public static MaterialType MapToDomain(MaterialTypeModel model)
         {
             return new ()
             {
@@ -14,7 +14,7 @@ namespace Mappers.DomainToModel
             };
         }
 
-        public MaterialTypeModel MapToModel(MaterialType domain)
+        public static MaterialTypeModel MapToModel(MaterialType domain)
         {
             return new ()
             {

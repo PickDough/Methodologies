@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Old", "Old\Old.csproj", "{835DF669-B5F0-45DE-8957-4F15408BB635}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{05B194D6-142C-4F5C-8BFE-2D089D5C7862}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{DF1E3E49-0A26-4204-8479-55085668E8BA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{2DC045B2-9EDA-4F22-9B0C-83E32B336FFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcces", "DataAcces\DataAcces.csproj", "{2DC045B2-9EDA-4F22-9B0C-83E32B336FFC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{798FACC8-3C4F-4A77-94F8-5FA31C319841}"
 EndProject
@@ -17,11 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mappers", "Mappers\Mappers.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{8EB85810-1775-46FF-91D8-7B072096DA99}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{9CD9EDAA-7458-46CE-8489-410F36EC4F99}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Console", "UI.Console\UI.Console.csproj", "{9CD9EDAA-7458-46CE-8489-410F36EC4F99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A83B36E7-7AFC-4720-ABAC-04B853474701}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIWpf", "UIWpf\UIWpf.csproj", "{0C96E49C-F990-486C-85F8-3C20E5D55DF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.WPF", "UI.WPF\UI.WPF.csproj", "{0C96E49C-F990-486C-85F8-3C20E5D55DF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +27,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{835DF669-B5F0-45DE-8957-4F15408BB635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{835DF669-B5F0-45DE-8957-4F15408BB635}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{835DF669-B5F0-45DE-8957-4F15408BB635}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{835DF669-B5F0-45DE-8957-4F15408BB635}.Release|Any CPU.Build.0 = Release|Any CPU
 		{05B194D6-142C-4F5C-8BFE-2D089D5C7862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{05B194D6-142C-4F5C-8BFE-2D089D5C7862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05B194D6-142C-4F5C-8BFE-2D089D5C7862}.Release|Any CPU.ActiveCfg = Release|Any CPU

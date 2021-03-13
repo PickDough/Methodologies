@@ -68,6 +68,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [
@@ -89,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\Data.csproj": {
+    "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\DataAcces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\Data.csproj",
-        "projectName": "Data",
-        "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\DataAcces.csproj",
+        "projectName": "DataAcces",
+        "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\DataAcces.csproj",
         "packagesPath": "C:\\Users\\koler\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\obj\\",
+        "outputPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\koler\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -150,6 +158,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [
@@ -206,6 +222,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -282,6 +308,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [
@@ -370,6 +404,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [
@@ -448,6 +490,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [
@@ -493,8 +543,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Data\\Data.csproj"
+              "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\DataAcces.csproj": {
+                "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\DataAcces\\DataAcces.csproj"
               },
               "C:\\Users\\koler\\RiderProjects\\Methodology\\Mappers\\Mappers.csproj": {
                 "projectPath": "C:\\Users\\koler\\RiderProjects\\Methodology\\Mappers\\Mappers.csproj"
@@ -536,6 +586,14 @@
             "Microsoft.EntityFrameworkCore.Tools.DotNet": {
               "target": "Package",
               "version": "[2.0.3, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[6.0.0-preview.2.21154.6, )"
             }
           },
           "imports": [

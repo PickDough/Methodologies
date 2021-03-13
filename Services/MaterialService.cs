@@ -2,6 +2,7 @@
 using System.Linq;
 using Data;
 using Data.Repositories.Abstract;
+using Data.UnitOfWork.Abstract;
 using Domain;
 using Mappers;
 using Mappers.DomainToModel;
@@ -11,15 +12,11 @@ namespace Services.Abstract
 {
     public class MaterialService: IMaterialService
     {
-        private readonly IMaterialRepository _materialRepository;
-        private readonly IMaterialEntityDomainMapper _entityDomainMapper;
-        private readonly IMaterialDomainModelMapper _domainModelMapper;
+        private readonly IUnitOfWork _uof;
 
-        public MaterialService()
+        public MaterialService(IUnitOfWork uof)
         {
-            _entityDomainMapper = new MaterialEntityDomainMapper();
-            _materialRepository = new MaterialRepository();
-            _domainModelMapper = new MaterialDomainModelMapper();
+            _uof = uof;
         }
 
         public Dictionary<MaterialModel, float> CalculateMaterials(List<OrderItem> orderItems)
@@ -27,9 +24,9 @@ namespace Services.Abstract
             Dictionary<Material, float> materialsAmount = new Dictionary<Material, float>();
             foreach (var item in  orderItems)
             {
-                List<Material> usedMaterials = _materialRepository
+                List<Material> usedMaterials = _uof.MaterialRepository
                     .GetMaterialsInOrderItem(item.Id)
-                    .Select(_entityDomainMapper.MapToDomain)
+                    .Select(MaterialEntityDomainMapper.MapToDomain)
                     .ToList();
                 foreach (Material material in usedMaterials)
                 {
@@ -44,7 +41,7 @@ namespace Services.Abstract
             }
 
             return materialsAmount
-                .ToDictionary(kp => _domainModelMapper.MapToModel(kp.Key),
+                .ToDictionary(kp => MaterialDomainModelMapper.MapToModel(kp.Key),
                     kp => kp.Value);
         }
     }

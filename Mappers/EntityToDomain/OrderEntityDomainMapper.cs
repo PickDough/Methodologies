@@ -5,30 +5,29 @@ using Model;
 
 namespace Mappers
 {
-    public class OrderEntityDomainMapper: IOrderEntityDomainMapper
+    public class OrderEntityDomainMapper
     {
-        private readonly IOrderItemEntityDomainMapper _orderItemEntityDomainMapper;
-
-        public OrderEntityDomainMapper()
-        {
-            _orderItemEntityDomainMapper = new OrderItemEntityDomainMapper();
-        }
-
-        public OrderEntity MapToEntity(Order domain)
+        public static OrderEntity MapToEntity(Order domain)
         {
             return new ()
             {
                 Id = domain.Id,
-                OrderItems = domain.OrderItems.Select(_orderItemEntityDomainMapper.MapToEntity).ToList()
+                OrderItems = domain.OrderItems
+                    .Select(OrderItemEntityDomainMapper.MapToEntity)
+                    .ToList(),
+                ClientId = domain.Client.Id
             };
         }
 
-        public Order MapToDomain(OrderEntity  entity)
+        public static Order MapToDomain(OrderEntity  entity)
         {
             return new ()
             {
                 Id = entity.Id,
-                OrderItems = entity.OrderItems.Select(_orderItemEntityDomainMapper.MapToDomain).ToList()
+                OrderItems = entity.OrderItems
+                    .Select(OrderItemEntityDomainMapper.MapToDomain)
+                    .ToList(),
+                Client = ClientEntityDomainMapper.MapToDomain(entity.Client)
             };
         }
     }
