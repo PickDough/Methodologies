@@ -2,11 +2,9 @@ C:\Users\koler\RiderProjects\Methodology\UI.WPF\bin\Debug\UI.WPF.exe.config
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\bin\Debug\UI.WPF.exe
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\bin\Debug\UI.WPF.pdb
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF.csprojAssemblyReference.cache
-C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\MainWindow.g.cs
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\App.g.cs
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF_MarkupCompile.cache
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF_MarkupCompile.lref
-C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\MainWindow.baml
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF.g.resources
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\WpfApplication1.Properties.Resources.resources
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF.csproj.GenerateResource.cache
@@ -85,3 +83,10 @@ C:\Users\koler\RiderProjects\Methodology\UI.WPF\bin\Debug\System.Threading.Tasks
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\bin\Debug\System.ValueTuple.xml
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF.exe.config
 C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\UI.WPF.csproj.CopyComplete
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\Resources\FrameResources.baml
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\MainWindow.g.cs
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\View\NavigationView.g.cs
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\MainWindow.baml
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\View\NavigationView.baml
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\Application.g.cs
+C:\Users\koler\RiderProjects\Methodology\UI.WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs

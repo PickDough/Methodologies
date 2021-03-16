@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="WpfApp1.View.NavigationView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        >
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/FrameResources.xaml"></ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Margin="10 10 10 10" Source="../Resources/baguette_img.png"/>
+        <TextBlock Grid.Row="1" Text="Frame Shop" Style="{StaticResource BigText}"/>
+        <Button Grid.Row="2" Command="{Binding DataContext.DisplayOrderView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                Width="250" Content="Order Frame" Style="{StaticResource ControlButton}"/>
+        <Button Grid.Row="3" Command="{Binding DataContext.DisplayMaterialView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                Width="250" Content="Calculate Materials" Style="{StaticResource ControlButton}"/>
+        <Button Grid.Row="4" Command="{Binding DataContext.DisplayClientView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                Width="250" Content="Client's Orders" Style="{StaticResource ControlButton}"/>
+    </Grid>
+</UserControl>
