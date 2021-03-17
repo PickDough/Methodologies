@@ -25,9 +25,9 @@ namespace Mappers.DomainToModel
             return new ()
             {
                 Id = domain.Id,
-                OrderItems = domain.OrderItems
+                OrderItems = new (domain.OrderItems
                     .Select(OrderItemDomainModelMapper.MapToModel)
-                    .ToList(),
+                    .ToList()),
                 Client = ClientDomainModelMapper.MapToModel(domain.Client)
             };
         }

@@ -9,7 +9,7 @@
     <UserControl.Resources>
         <ResourceDictionary Source="../Resources/FrameResources.xaml"></ResourceDictionary>
     </UserControl.Resources>
-    <Grid ShowGridLines="True">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="6*"></RowDefinition>
@@ -21,12 +21,20 @@
             <ColumnDefinition Width="1.5*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
             <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="0.5*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+            <ColumnDefinition Width="1.9*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Margin="5" Command="{Binding DataContext.DisplayNavigationView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Content="Back" Style="{StaticResource ControlButton}"/>
         <Button Grid.Row="3" Grid.Column="2" Margin="10" Command="{Binding OrderItem}"
+                Content="Add to order" Style="{StaticResource ControlButton}"/>
+        <Button Grid.Row="2" Grid.Column="4" Margin="3" Command="{Binding FinishOrder}"
                 Content="Order" Style="{StaticResource ControlButton}"/>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <ListBox BorderBrush="LightCoral" BorderThickness="2" ItemContainerStyle="{StaticResource SelectBoxItem}" ItemsSource="{Binding AvailableFrames}" SelectedItem="{Binding SelectedFrame}"></ListBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="4">
+            <ListBox BorderBrush="LightSalmon" BorderThickness="2" ItemContainerStyle="{StaticResource ShowBoxItem}" ItemsSource="{Binding OrderItems}" SelectedItem="{Binding SelectedFrame}"></ListBox>
+        </StackPanel>
     </Grid>
 </UserControl>

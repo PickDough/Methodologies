@@ -110,3 +110,5 @@ C:\Users\koler\RiderProjects\Methodology\WpfApp1\bin\Debug\net5.0-windows\Entiti
 C:\Users\koler\RiderProjects\Methodology\WpfApp1\bin\Debug\net5.0-windows\Mappers.pdb
 C:\Users\koler\RiderProjects\Methodology\WpfApp1\bin\Debug\net5.0-windows\Model.pdb
 C:\Users\koler\RiderProjects\Methodology\WpfApp1\obj\Debug\net5.0-windows\WpfApp1.csproj.CopyComplete
+C:\Users\koler\RiderProjects\Methodology\WpfApp1\obj\Debug\net5.0-windows\View\FrameParametersDialog.g.cs
+C:\Users\koler\RiderProjects\Methodology\WpfApp1\obj\Debug\net5.0-windows\View\FrameParametersDialog.baml

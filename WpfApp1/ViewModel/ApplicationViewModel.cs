@@ -9,11 +9,12 @@ namespace WpfApp1.ViewModel
     public class ApplicationViewModel: BaseViewModel, IPageViewModel
     {
         private readonly IServiceProvider _serviceProvider;
-        private IPageViewModel _currentViewModel = new NavigationViewModel();
+        private IPageViewModel _currentViewModel;
 
         public ApplicationViewModel(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
+            _currentViewModel = _serviceProvider.GetService<NavigationViewModel>();
         }
         public IPageViewModel CurrentViewModel
         {
@@ -32,6 +33,6 @@ namespace WpfApp1.ViewModel
         public ICommand DisplayMaterialView => new RelayCommand(_ => 
             CurrentViewModel = _serviceProvider.GetService<MaterialViewModel>());
         public ICommand DisplayClientView => new RelayCommand(_ => 
-            CurrentViewModel = _serviceProvider.GetService<ClientViewModel>());
+            {});
     }
 }

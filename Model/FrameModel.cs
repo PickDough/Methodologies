@@ -9,5 +9,10 @@ namespace Model
         public string Info { get; set; }
         public string Description { get; set; }
         public FrameTypeModel FrameType { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FrameType} Frame: {Name}. {Description}";
+        }
     }
 }

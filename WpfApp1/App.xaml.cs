@@ -5,14 +5,11 @@ using Data.UnitOfWork.Abstract;
 using Microsoft.Extensions.DependencyInjection;
 using Services;
 using Services.Abstract;
+using WpfApp1.Directory;
 using WpfApp1.ViewModel;
-using WpfApplication1.ViewModel;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
         private readonly ServiceProvider _serviceProvider;
@@ -34,6 +31,7 @@ namespace WpfApp1
             serviceCollection.AddScoped<NavigationViewModel>();
             serviceCollection.AddScoped<ClientViewModel>();
             serviceCollection.AddScoped<MaterialViewModel>();
+            serviceCollection.AddScoped<IDialogService, DialogService>();
             serviceCollection.AddSingleton<ApplicationView>();
             serviceCollection.AddSingleton(sp => sp);
         }
@@ -41,16 +39,6 @@ namespace WpfApp1
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            // IUnitOfWork _uof = new UnitOfWork();
-            // IMaterialService _materialService = new MaterialService(_uof);
-            // IOrderService _orderService = new OrderService(_uof, _materialService);
-            // IFrameService _frameService = new FrameService(_uof);
-            //
-            // OrderViewModel _order = new OrderViewModel(_orderService, _frameService);
-            // ClientViewModel _client = new ClientViewModel();
-            // MaterialViewModel _material = new MaterialViewModel();
-            // NavigationViewModel _navigation = new NavigationViewModel();
-            
             ApplicationView app = _serviceProvider.GetService<ApplicationView>();
             app.Show();
         }
