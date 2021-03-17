@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using Microsoft.Extensions.DependencyInjection;
 using Model;
@@ -10,23 +11,24 @@ using WpfApplication1.ViewModel.Command;
 
 namespace WpfApp1.ViewModel
 {
-    public class MaterialViewModel: BaseViewModel, IPageViewModel
+    public class ClientSearchViewModel: BaseViewModel, IPageViewModel
     {
         private OrderModel _order;
+        private string _searchText;
+        private ObservableCollection<OrderModel> _orders;
         
         private IDialogService _dialogService;
         private IOrderService _orderService;
         private IServiceProvider _serviceProvider;
-        public MaterialViewModel(IOrderService orderService, IDialogService dialogService, IServiceProvider serviceProvider)
+        
+        public ClientSearchViewModel(IDialogService dialogService, IOrderService orderService, IServiceProvider serviceProvider)
         {
-            _orderService = orderService;
             _dialogService = dialogService;
+            _orderService = orderService;
             _serviceProvider = serviceProvider;
+            _orders = new(_orderService.GetAllOrders());
         }
-
-        public ObservableCollection<OrderModel> Orders =>
-            new(_orderService.GetAllOrders());
-
+        
         public OrderModel SelectedOrder
         {
             get => _order;
@@ -34,6 +36,28 @@ namespace WpfApp1.ViewModel
             {
                 _order = value;
                 NotifyPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<OrderModel> FilteredOrders
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(SearchText))
+                    return _orders;
+                return new(_orders.Where(o => o.Client.StartsWith(SearchText)));
+            }
+        }
+        
+        public string SearchText
+        {
+            get => _searchText;
+            set
+            {
+                _searchText = value;
+                SelectedOrder = null;
+                NotifyPropertyChanged();
+                NotifyPropertyChanged("FilteredOrders");
             }
         }
         
@@ -45,7 +69,6 @@ namespace WpfApp1.ViewModel
                 viewModel.Order = SelectedOrder;
                 _dialogService.OpenRequiredMaterialsDialog(viewModel);
             }
-        }, _ => SelectedOrder != null);
-        
+        }, _ => SelectedOrder != null && FilteredOrders.Count > 0);
     }
 }

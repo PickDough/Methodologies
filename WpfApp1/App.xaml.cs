@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Services;
 using Services.Abstract;
 using WpfApp1.Directory;
+using WpfApp1.Services;
 using WpfApp1.ViewModel;
 
 namespace WpfApp1
@@ -31,7 +32,10 @@ namespace WpfApp1
             serviceCollection.AddScoped<NavigationViewModel>();
             serviceCollection.AddScoped<ClientViewModel>();
             serviceCollection.AddScoped<MaterialViewModel>();
+            serviceCollection.AddScoped<ClientSearchViewModel>();
             serviceCollection.AddScoped<IDialogService, DialogService>();
+            serviceCollection.AddScoped<OrderItemViewModel>();
+            serviceCollection.AddScoped<RequiredMaterialsViewModel>();
             serviceCollection.AddSingleton<ApplicationView>();
             serviceCollection.AddSingleton(sp => sp);
         }

@@ -9,6 +9,7 @@ namespace Mappers
         {
             return new()
             {
+                Id = domain.Id,
                 Name = domain.Name,
                 Surname = domain.Surname,
                 PhoneNumber = domain.PhoneNumber
@@ -19,6 +20,7 @@ namespace Mappers
         {
             return new()
             {
+                Id = entity.Id,
                 Name = entity.Name,
                 Surname = entity.Surname,
                 PhoneNumber = entity.PhoneNumber

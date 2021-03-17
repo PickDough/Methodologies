@@ -33,6 +33,6 @@ namespace WpfApp1.ViewModel
         public ICommand DisplayMaterialView => new RelayCommand(_ => 
             CurrentViewModel = _serviceProvider.GetService<MaterialViewModel>());
         public ICommand DisplayClientView => new RelayCommand(_ => 
-            {});
+            CurrentViewModel = _serviceProvider.GetService<ClientSearchViewModel>());
     }
 }

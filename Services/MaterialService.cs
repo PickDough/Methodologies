@@ -32,10 +32,10 @@ namespace Services.Abstract
                 {
                     if (materialsAmount.ContainsKey(material))
                         materialsAmount[material] += 
-                            material.UnitsPerArea * item.FrameParameters.Area * item.Quantity;
+                            material.UnitsPerArea * item.FrameParameters.Area * item.Quantity/10000;
                     else
                         materialsAmount[material] =
-                            material.UnitsPerArea * item.FrameParameters.Area * item.Quantity;
+                            material.UnitsPerArea * item.FrameParameters.Area * item.Quantity/10000;
                 }
                 
             }

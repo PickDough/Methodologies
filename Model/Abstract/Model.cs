@@ -8,10 +8,9 @@ namespace Model
 {
     public class Model: IModel, INotifyPropertyChanged
     {
-        public Guid Id { get; set; } 
         public Model()
         {
-            Id = new Guid();
+            Id = Guid.NewGuid();
         }
         
         public event PropertyChangedEventHandler PropertyChanged;

@@ -11,7 +11,7 @@ namespace WpfApp1.ViewModel
     {
         private OrderItemModel _orderItem;
         
-        public OrderItemViewModel(string title, string message): base(title, message)
+        public OrderItemViewModel()
         {
             _orderItem = new OrderItemModel {FrameParameters = new FrameParametersModel()};
         }

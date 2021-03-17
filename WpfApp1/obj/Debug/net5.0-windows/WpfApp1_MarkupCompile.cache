@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\koler\RiderProjects\Methodology\WpfApp1\App.xaml
-7-744038484
+9-1349719845
 
-21-683559099
-2431530720378
-Resources\FrameResources.xaml;View\ApplicationView.xaml;View\ClientView.xaml;View\FrameParametersDialog.xaml;View\MaterialView.xaml;View\NavigationView.xaml;View\OrderView.xaml;
+252025557517
+243264430696
+Resources\FrameResources.xaml;View\ApplicationView.xaml;View\ClientSearchView.xaml;View\ClientView.xaml;View\FrameParametersDialog.xaml;View\MaterialView.xaml;View\NavigationView.xaml;View\OrderView.xaml;View\RequiredMaterialsView.xaml;
 
 False
 

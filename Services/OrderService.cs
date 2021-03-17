@@ -40,11 +40,13 @@ namespace Services
 
         public List<OrderModel> GetAllOrders()
         {
-            return _uof.OrderRepository
-                .GetAllComplex()
-                .Select(OrderEntityDomainMapper.MapToDomain)
+            var list = _uof.OrderRepository
+                .GetAllComplex();
+                
+            var list2 = list.Select(OrderEntityDomainMapper.MapToDomain)
                 .Select(OrderDomainModelMapper.MapToModel)
                 .ToList();
+            return list2;
         }
 
         public RequiredMaterialsModel GetRequiredMaterials(Guid orderId)

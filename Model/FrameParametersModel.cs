@@ -10,7 +10,8 @@ namespace Model
         private float _height; 
         private float _dwidth;
         private float _dheight;
-
+        
+        public FrameParametersModel(): base() {}
         public float Width
         {
             get => _width;

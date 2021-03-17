@@ -7,6 +7,7 @@
         xmlns:viewModel="clr-namespace:WpfApp1.ViewModel"
         xmlns:view="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Application" Height="500" Width="725">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:NavigationViewModel}">
@@ -18,8 +19,8 @@
         <DataTemplate DataType="{x:Type viewModel:MaterialViewModel}">
             <view:MaterialView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:ClientViewModel}">
-            <view:ClientView/>
+        <DataTemplate DataType="{x:Type viewModel:ClientSearchViewModel}">
+            <view:ClientSearchView/>
         </DataTemplate>
     </Window.Resources>
     <ContentControl  Content="{Binding   CurrentViewModel}"/>

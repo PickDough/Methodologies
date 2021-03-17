@@ -9,6 +9,7 @@ namespace Mappers.DomainToModel
         {
             return new()
             {
+                Id = model.Id,
                 Name = model.Name,
                 Surname = model.Surname,
                 PhoneNumber = model.PhoneNumber
@@ -19,6 +20,7 @@ namespace Mappers.DomainToModel
         {
             return new()
             {
+                Id = domain.Id,
                 Name = domain.Name,
                 Surname = domain.Surname,
                 PhoneNumber = domain.PhoneNumber

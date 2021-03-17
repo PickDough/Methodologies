@@ -11,7 +11,7 @@ namespace WpfApp1.ViewModel
     {
         public ClientModel Client { get; set; }
 
-        public ClientViewModel(string title, string message) : base(title, message)
+        public ClientViewModel()
         {
             Client = new ClientModel();
         }

@@ -10,8 +10,7 @@ namespace Model
         private string _name;
         private string _surname;
         private string _phoneNumber;
-        private Regex rgx = new Regex((@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}"));
-
+        public ClientModel(): base() {}
         public string Name
         {
             get => _name;
@@ -45,7 +44,9 @@ namespace Model
 
         public bool Validate()
         {
-            return !Name.Any(char.IsDigit) && !Surname.Any(char.IsDigit) && rgx.IsMatch(PhoneNumber);
+            Regex rgx = new Regex((@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}"));
+            return  (!string.IsNullOrEmpty(Name) && !string.IsNullOrEmpty(Surname) && !string.IsNullOrEmpty(PhoneNumber)) &&
+                (!Name.Any(char.IsDigit) && !Surname.Any(char.IsDigit) && rgx.IsMatch(PhoneNumber));
         }
 
         public string this[string name]
@@ -57,25 +58,45 @@ namespace Model
                 {
                     case "Name":
                     {
-                        if (Name.Any(char.IsDigit))
+                        if (string.IsNullOrEmpty(Name))
+                            result = "Cannot be empty";
+                        else if (Name.Any(char.IsDigit))
                             result = "Name cannot contain digits";
                         break;
                     }
                     case "Surname":
                     {
-                        if (Surname.Any(char.IsDigit))
+                        if (string.IsNullOrEmpty(Surname))
+                            result = "Cannot be empty";
+                        else if (Surname.Any(char.IsDigit))
                             result = "Surname cannot contain digits";
                         break;
                     }
                     case "PhoneNumber":
                     {
-                        if (!rgx.IsMatch(PhoneNumber))
-                            result = "Phone Number must be in correct format";
+                        if (string.IsNullOrEmpty(PhoneNumber))
+                            result = "Cannot be empty";
+                        else
+                        {
+                            Regex rgx = new Regex((@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}"));
+                            if (!rgx.IsMatch(PhoneNumber))
+                                result = "Phone Number must be in correct format";
+                        }
                         break;
                     }
                 }
                 return result;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} {Surname}";
+        }
+
+        public bool StartsWith(string searchText)
+        {
+            return Name.StartsWith(searchText) || Surname.StartsWith(searchText) || PhoneNumber.StartsWith(searchText);
         }
     }
 }

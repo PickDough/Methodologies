@@ -37,6 +37,7 @@ namespace Data
         public IEnumerable<OrderEntity> GetAllComplex()
         {
             return dbSet
+                .Include(order => order.Client)
                 .Include(order => order.OrderItems)
                     .ThenInclude(item => item.FrameParameters)
                 .Include(order => order.OrderItems)
