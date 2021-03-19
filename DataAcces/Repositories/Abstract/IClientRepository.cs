@@ -5,6 +5,6 @@ namespace Data.Repositories.Abstract
 {
     public interface IClientRepository: IRepository<ClientEntity, Guid>
     {
-        public bool Exists(ClientEntity entity);
+        public ClientEntity GetByInfo(ClientEntity entity);
     }
 }

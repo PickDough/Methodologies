@@ -23,13 +23,19 @@ namespace Services
 
         public void AddOrder(OrderModel order)
         {
-            if (!_uof.ClientRepository.Exists(ClientEntityDomainMapper
+            var client = _uof.ClientRepository.GetByInfo(ClientEntityDomainMapper
                 .MapToEntity(ClientDomainModelMapper
-                    .MapToDomain(order.Client))))
+                    .MapToDomain(order.Client)));
+            if (client == null)
             {
                 _uof.ClientRepository.Add(ClientEntityDomainMapper
                     .MapToEntity(ClientDomainModelMapper
                         .MapToDomain(order.Client)));
+            }
+            else
+            {
+                order.Client = ClientDomainModelMapper
+                    .MapToModel(ClientEntityDomainMapper.MapToDomain(client));
             }
             _uof.OrderRepository
                 .Add(OrderEntityDomainMapper

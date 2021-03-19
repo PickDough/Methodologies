@@ -31,5 +31,6 @@
         <StackPanel Grid.Row="2" Grid.Column="2">
             <ListBox BorderBrush="LightCoral" BorderThickness="2" ItemContainerStyle="{StaticResource SelectBoxItem}" ItemsSource="{Binding FilteredOrders}" SelectedItem="{Binding SelectedOrder}"></ListBox>
         </StackPanel>
+        <TextBlock FontSize="16" Style="{StaticResource BigText}" Grid.Column="2" Text="Type in Client's Name, Surname or &#x0a; Phone Number to find theirs order."></TextBlock>
     </Grid>
 </UserControl>

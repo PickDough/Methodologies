@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using Data;
 using Data.UnitOfWork;
 using Data.UnitOfWork.Abstract;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,21 +24,26 @@ namespace WpfApp1
 
         private void ConfigureServices(ServiceCollection serviceCollection)
         {
+            //DbContext
+            serviceCollection.AddDbContext<FrameDataContext>();
+            //Services
             serviceCollection.AddSingleton<IUnitOfWork,UnitOfWork>();
-            serviceCollection.AddScoped<IMaterialService, MaterialService>();
-            serviceCollection.AddScoped<IOrderService, OrderService>();
-            serviceCollection.AddScoped<IFrameService, FrameService>();
-            serviceCollection.AddScoped<ApplicationViewModel>();
-            serviceCollection.AddScoped<OrderViewModel>();
-            serviceCollection.AddScoped<NavigationViewModel>();
-            serviceCollection.AddScoped<ClientViewModel>();
-            serviceCollection.AddScoped<MaterialViewModel>();
-            serviceCollection.AddScoped<ClientSearchViewModel>();
-            serviceCollection.AddScoped<IDialogService, DialogService>();
-            serviceCollection.AddScoped<OrderItemViewModel>();
-            serviceCollection.AddScoped<RequiredMaterialsViewModel>();
-            serviceCollection.AddSingleton<ApplicationView>();
+            serviceCollection.AddSingleton<IMaterialService, MaterialService>();
+            serviceCollection.AddSingleton<IOrderService, OrderService>();
+            serviceCollection.AddSingleton<IFrameService, FrameService>();
+            serviceCollection.AddSingleton<IDialogService, DialogService>();
             serviceCollection.AddSingleton(sp => sp);
+            //ViewModel
+            serviceCollection.AddTransient<ApplicationViewModel>();
+            serviceCollection.AddTransient<OrderViewModel>();
+            serviceCollection.AddTransient<NavigationViewModel>();
+            serviceCollection.AddTransient<ClientViewModel>();
+            serviceCollection.AddTransient<MaterialViewModel>();
+            serviceCollection.AddTransient<ClientSearchViewModel>();
+            serviceCollection.AddTransient<OrderItemViewModel>();
+            serviceCollection.AddTransient<RequiredMaterialsViewModel>();
+            //Application
+            serviceCollection.AddSingleton<ApplicationView>();
         }
 
         protected override void OnStartup(StartupEventArgs e)

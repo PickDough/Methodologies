@@ -9,9 +9,9 @@ namespace Data.Repositories
     {
         public ClientRepository(DbContext dbContext) : base(dbContext) {}
 
-        public bool Exists(ClientEntity entity)
+        public ClientEntity GetByInfo(ClientEntity entity)
         {
-            return dbSet.Any(client =>  client.Name == entity.Name 
+            return dbSet.FirstOrDefault(client =>  client.Name == entity.Name 
                                         && client.Surname == entity.Surname 
                                         && client.PhoneNumber == entity.PhoneNumber);
         }

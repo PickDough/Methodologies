@@ -18,11 +18,11 @@
             <RowDefinition Height="0.75*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="0.5*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="0.1*"></ColumnDefinition>
-            <ColumnDefinition Width="1.9*"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition Width="2.1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Button Grid.Row="0" Grid.Column="0" Margin="5" Command="{Binding DataContext.DisplayNavigationView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Content="Back" Style="{StaticResource ControlButton}"/>
@@ -34,7 +34,7 @@
             <ListBox BorderBrush="LightCoral" BorderThickness="2" ItemContainerStyle="{StaticResource SelectBoxItem}" ItemsSource="{Binding AvailableFrames}" SelectedItem="{Binding SelectedFrame}"></ListBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="4">
-            <ListBox BorderBrush="LightSalmon" BorderThickness="2" ItemContainerStyle="{StaticResource ShowBoxItem}" ItemsSource="{Binding OrderItems}" SelectedItem="{Binding SelectedFrame}"></ListBox>
+            <ListBox BorderBrush="LightSalmon" BorderThickness="0" ItemContainerStyle="{StaticResource ShowBoxItem}" ItemsSource="{Binding OrderItems}" SelectedItem="{Binding SelectedFrame}"></ListBox>
         </StackPanel>
     </Grid>
 </UserControl>

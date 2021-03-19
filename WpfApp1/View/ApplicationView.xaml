@@ -7,8 +7,8 @@
         xmlns:viewModel="clr-namespace:WpfApp1.ViewModel"
         xmlns:view="clr-namespace:WpfApp1.View"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
-        Title="Application" Height="500" Width="725">
+        WindowStartupLocation="CenterScreen" Icon="../Resources/frame_shop.ico"
+        Title="FrameShop" Height="500" Width="725">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:NavigationViewModel}">
             <view:NavigationView/>

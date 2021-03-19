@@ -7,12 +7,16 @@ namespace Data.UnitOfWork
 {
     public class UnitOfWork: IUnitOfWork
     {
-        private readonly FrameDataContext _db = new FrameDataContext();
+        private readonly FrameDataContext _db;
         private IFrameRepository _frameRepository;
         private IMaterialRepository _materialRepository;
         private IOrderRepository _orderRepository;
         private IClientRepository _clientRepository;
-        
+
+        public UnitOfWork(FrameDataContext db)
+        {
+            _db = db;
+        }
         public IFrameRepository FrameRepository 
         {
             get { return _frameRepository ??= new FrameRepository(_db); }

@@ -7,9 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Resources\frame_shop.ico" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Resource Include="Resources\baguette_img.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
+      <Resource Include="Resources\frame_shop.ico" />
       <Resource Include="Resources\JMHTypewriter.otf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Resource>
