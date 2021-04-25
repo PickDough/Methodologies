@@ -1,8 +1,8 @@
-﻿using System.Windows.Controls;
+﻿using WpfApplication1.ViewModel.Abstract;
 
-namespace WpfApplication1.ViewModel
+namespace WpfApp1.ViewModel
 {
-    public class NavigationViewModel
+    public class NavigationViewModel: BaseViewModel, IPageViewModel
     {
         
     }

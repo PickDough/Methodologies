@@ -1,4 +1,4 @@
-﻿namespace WpfApplication1
+﻿namespace WpfApp1.View
 {
     public partial class NavigationView
     {
