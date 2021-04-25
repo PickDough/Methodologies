@@ -19,11 +19,11 @@
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Margin="10 10 10 10" Source="../Resources/baguette_img.png"/>
         <TextBlock Grid.Row="1" Text="Frame Shop" Style="{StaticResource BigText}"/>
-        <Button Grid.Row="2" Command="{Binding DataContext.DisplayOrderView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+        <Button Grid.Row="2" Command="{Binding DataContext.ChangeToOrderViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Width="250" Content="Order Frame" Style="{StaticResource ControlButton}"/>
-        <Button Grid.Row="3" Command="{Binding DataContext.DisplayMaterialView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+        <Button Grid.Row="3" Command="{Binding DataContext.ChangeToMaterialViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Width="250" Content="Calculate Materials" Style="{StaticResource ControlButton}"/>
-        <Button Grid.Row="4" Command="{Binding DataContext.DisplayClientView, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+        <Button Grid.Row="4" Command="{Binding DataContext.ChangeToClientViewModel, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Width="250" Content="Client's Orders" Style="{StaticResource ControlButton}"/>
     </Grid>
 </UserControl>

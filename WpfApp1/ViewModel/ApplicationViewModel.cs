@@ -26,13 +26,13 @@ namespace WpfApp1.ViewModel
             }
         }
 
-        public ICommand DisplayNavigationView => new RelayCommand(_ =>
+        public ICommand ChangeToNavigationViewModel => new RelayCommand(_ =>
             CurrentViewModel = _serviceProvider.GetService<NavigationViewModel>());
-        public ICommand DisplayOrderView => new RelayCommand(_ => 
+        public ICommand ChangeToOrderViewModel => new RelayCommand(_ => 
             CurrentViewModel = _serviceProvider.GetService<OrderViewModel>());
-        public ICommand DisplayMaterialView => new RelayCommand(_ => 
+        public ICommand ChangeToMaterialViewModel => new RelayCommand(_ => 
             CurrentViewModel = _serviceProvider.GetService<MaterialViewModel>());
-        public ICommand DisplayClientView => new RelayCommand(_ => 
+        public ICommand ChangeToClientViewModel => new RelayCommand(_ => 
             CurrentViewModel = _serviceProvider.GetService<ClientSearchViewModel>());
     }
 }
